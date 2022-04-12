@@ -166,6 +166,7 @@ storage:
             --mount volume=bootstrap,target=/etc/kubernetes \
             $${RKT_OPTS} \
             docker://quay.io/coreos/bootkube:v0.14.0 \
+            --insecure-options=image \
             --net=host \
             --dns=host \
             --exec=/bootkube -- start --asset-dir=/assets "$@"
